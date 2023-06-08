@@ -1,0 +1,101 @@
+body{min-width: 1200px;overflow-x:auto; }
+.clear{ clear:both}
+.hide{display: none;}
+.show{display: block;}
+.traffic_nav {margin:0 auto;width:500px;height:50px;line-height:80px;text-align:center;}
+.traffic_nav ul {display: flex; flex-direction: row;justify-content: center;}
+.traffic_nav ul li {list-style:none;float:left;text-decoration:none;display:block;margin-right:100px; font-size:18px;}
+.traffic_nav ul li:hover {border-bottom:3px solid #F75009;}
+.traffic_nav ul li.active {border-bottom:3px solid #F75009;}
+.traffic_nav ul li.active a{color:#2872D8;}
+.traffic_nav ul li a {text-decoration:none;color:#000000;}
+.traffic_nav ul li a:visited {text-decoration:none;color:#000000;}
+#traffic_d1 {width:1200px;}
+#traffic_d2 {display:none;width:1200px;height: 700px;}
+#traffic_d3 {display:none;width:1200px;}
+.traffic_container {font-family:"Microsoft Yahei","微软雅黑";font-size:14px; padding-top: 100px;}
+.traffic_container .traffic_home .home_img{ float: left; width: 600px;}
+.traffic_container .traffic_home .traffic_content{ float: left; width: 600px;font-size: 16px;color:#333; line-height: 18px;}
+.traffic_container .traffic_home .traffic_content .content_text{margin-left: 100px; margin-top: 100px;}
+.traffic_container .traffic_home .traffic_content .content_discription{margin-top: 300px;font-size: 14px;position: relative;}
+.traffic_container .traffic_home .traffic_content .content_discription::after{ position: absolute;content: '';left: 0px;bottom: -15px;height: 0px;width: 30px;border: 2px solid #2872D8;}
+.traffic_container .traffic_home .traffic_content .docs_header{ font-size: 24px;color:#2872D8;border-left: 4px solid #2872D8; line-height: 28px;text-indent:1em;}
+.traffic_container .traffic_home .traffic_content .docs_discription{ margin: 10px 0 0 28px;}
+
+/*traffic_home*/
+.traffic_home .traffic_foot {/* width:100%;*/height:30px;line-height:20px;color:#335569;font-size:14px;}
+.traffic_demo{height: 700px;}
+.traffic_demo .traffic_demo_nav{ float: left; width: 140px;}
+.traffic_demo .traffic_demo_nav div{ margin-top: 10px;}
+.traffic_demo .traffic_demo_right{float: left;width:1060px;}
+.traffic_demo .traffic_demo_right .traffic_demo_flow {float: left;height: 700px;background-color: #f9f9f9;margin-top: 8px; width:700px;}
+.traffic_demo .traffic_demo_right .traffic_demo_form {float: left;height: 700px;margin-top: 8px;margin-left: 30px;}
+.traffic_demo .traffic_demo_right .traffic_demo_form .cro_name{margin-left: 0;font-size: 15px;}
+.traffic_demo .traffic_demo_right .traffic_demo_form .dire_title {margin: 10px 0 0 0 ;}
+.traffic_demo .traffic_demo_right .traffic_demo_form .form_road {text-align: center;}
+.traffic_demo .traffic_demo_right .traffic_demo_form .xxroad {width: 135px;height: 22px;text-align: center;}
+.traffic_demo .traffic_demo_right .traffic_demo_form .yyroad {width: 135px;height: 22px;text-align: center;}
+/*.traffic_demo .traffic_demo_right .traffic_demo_form .con_title {background-color: #DAECF6;width: 100%;height: 40px;line-height: 40px;color: #335569;font-size: 15px;}*/
+.traffic_demo .traffic_demo_right .traffic_demo_form .con_title {background-color: #fff; color: #2972D8;height: 28px;font-size:18px;line-height: 28px;padding:0 10px;}
+.traffic_demo .traffic_demo_right .traffic_demo_form .con_title span{border-left: 4px solid #2872D8; padding-left: 20px;}
+.traffic_demo .traffic_demo_right .traffic_demo_form .dire_con {margin: 10px 0 0 0 ;font-size: 15px;}
+.traffic_demo .traffic_demo_right .traffic_demo_form  .east {margin-left: 0 ;margin-top: 5px;}
+.traffic_demo .traffic_demo_right .traffic_demo_form  .left {float: left;margin-left: 0 ;border-radius: 3px;border:1px solid #BCBCBC;width:40px;height:35px;text-align: center;}
+.traffic_demo .traffic_demo_right .traffic_demo_form  .east_left {float: left;width: 100px;height: 30px;margin: 0 0 0 5px;text-indent:10px;}
+.traffic_demo .traffic_demo_right .traffic_demo_form  .right {float: left;margin-left: 5px ;border-radius: 3px;border:1px solid #BCBCBC;width:40px;height:35px;text-align: center;}
+.traffic_demo .traffic_demo_right .traffic_demo_form  .east_right {width: 100px;height: 30px;margin: 0 0 0 5px;text-indent:10px;}
+.traffic_demo .traffic_demo_right .traffic_demo_form  .front {float: left;margin:-10px 0 0 0;border-radius: 3px;border:1px solid #BCBCBC;width:40px;height:35px;text-align: center;}
+.traffic_demo .traffic_demo_right .traffic_demo_form  .east_front {float: left;width: 100px;height: 30px;margin: -10px 0 0 5px;text-indent:10px;}
+.traffic_demo .traffic_demo_right .traffic_demo_form  .return {float: left;margin:-10px 0 0 5px;border-radius: 3px;border:1px solid #BCBCBC;width:40px;height:35px;text-align: center;}
+.traffic_demo .traffic_demo_right .traffic_demo_form  .east_return {width: 100px;height: 30px;margin: -10px 0 0 5px;text-indent:10px;}
+
+.traffic_demo .traffic_demo_right .traffic_demo_form  .north {margin-left: 0 ;margin-top: 5px;}
+.traffic_demo .traffic_demo_right .traffic_demo_form  .north_left {float: left;width: 100px;height: 30px;margin: 0 0 0 5px;text-indent:10px;}
+.traffic_demo .traffic_demo_right .traffic_demo_form  .north_right {width: 100px;height: 30px;margin: 0 0 0 5px;text-indent:10px;}
+.traffic_demo .traffic_demo_right .traffic_demo_form  .north_front {float: left;width: 100px;height: 30px;margin: -10px 0 0 5px;text-indent:10px;}
+.traffic_demo .traffic_demo_right .traffic_demo_form  .north_return {width: 100px;height: 30px;margin: -10px 0 0 5px;text-indent:10px;}
+
+.traffic_demo .traffic_demo_right .traffic_demo_form  .west {margin-left: 0 ;margin-top: 5px;}
+.traffic_demo .traffic_demo_right .traffic_demo_form  .west_left {float: left;width: 100px;height: 30px;margin: 0 0 0 5px;text-indent:10px;}
+.traffic_demo .traffic_demo_right .traffic_demo_form  .west_right {width: 100px;height: 30px;margin: 0 0 0 5px;text-indent:10px;}
+.traffic_demo .traffic_demo_right .traffic_demo_form  .west_front {float: left;width: 100px;height: 30px;margin: -10px 0 0 5px;text-indent:10px;}
+.traffic_demo .traffic_demo_right .traffic_demo_form  .west_return {width: 100px;height: 30px;margin: -10px 0 0 5px;text-indent:10px;}
+
+.traffic_demo .traffic_demo_right .traffic_demo_form  .south {margin-left: 0 ;margin-top: 5px;}
+.traffic_demo .traffic_demo_right .traffic_demo_form  .south_left {float: left;width: 100px;height: 30px;margin: 0 0 0 5px;text-indent:10px;}
+.traffic_demo .traffic_demo_right .traffic_demo_form  .south_right {width: 100px;height: 30px;margin: 0 0 0 5px;text-indent:10px;}
+.traffic_demo .traffic_demo_right .traffic_demo_form  .south_front {float: left;width: 100px;height: 30px;margin: -10px 0 0 5px;text-indent:10px;}
+.traffic_demo .traffic_demo_right .traffic_demo_form  .south_return {width: 100px;height: 30px;margin: -10px 0 0 5px;text-indent:10px;}
+
+.traffic_demo .traffic_demo_right .traffic_demo_form .sec_left {float: left;margin: 10px 0 0 0 ;border-radius: 3px;border:1px solid #BCBCBC;width:40px;height:35px;text-align: center;}
+.traffic_demo .traffic_demo_right .traffic_demo_form .sec_east_left {float: left;width: 100px;height: 30px;margin: 10px 0 0 5px;text-indent:10px;}
+.traffic_demo .traffic_demo_right .traffic_demo_form .sec_right {float: left;margin: 10px 0 0 5px ;border-radius: 3px;border:1px solid #BCBCBC;width:40px;height:35px;text-align: center;}
+.traffic_demo .traffic_demo_right .traffic_demo_form .sec_east_right {width: 100px;height: 30px;margin: 10px 0 0 5px;text-indent:10px;}
+
+.traffic_demo .traffic_demo_right .traffic_demo_form .sub {width: 110px;height: 35px;background-color: #FF8801;border-radius: 5px;color: white;border: none;outline:none;}
+.traffic_demo .traffic_demo_right .traffic_demo_form .dire {width: 60px;height: 30px;font-size: 15px;}
+.traffic_demo .traffic_demo_right .traffic_demo_form .radio {margin: 10px 0 0 0 ;}
+
+/*traffic_readme*/
+.traffic_readme{height: 700px;font-size: 16px;}
+.traffic_readme .readme_title{background:url("../images/traffic/traffic_readme.png") no-repeat 0 0;line-height: 56px;}
+.traffic_readme .readme_title span{font-size: 30px;margin-left: 80px;font-weight:bold;}
+.traffic_readme .readme_nav{height: 90px;}
+.traffic_readme .contents_ul{margin-top: 90px;}
+.traffic_readme .contents_ul li{float: left;width: 240px;height: 45px;background-color: #C0C3C8;margin-right: 60px;font-size: 18px;color: #fff;line-height: 45px;text-align: center;cursor: pointer;}
+.traffic_readme .contents_ul li.active,.traffic_readme .contents_ul li:hover{background-color: #2972D8;}
+.traffic_readme .contents_ul li a{ color: #fff;width: 240px;height: 45px;}
+.traffic_readme .contents_text{position: relative;}
+.traffic_readme .contents_text .text {margin-top: 60px;}
+.traffic_readme .contents_text .text_title {position: absolute;top: -15px;left: 30px;background-color: #fff; color: #2972D8;height: 28px;font-size:20px;border-left: 4px solid #2872D8; line-height: 28px;padding:0 10px;}
+.traffic_readme .contents_text .text .text_img {float:left; width: 560px;box-shadow: 0px 4px 13px rgba(0,0,0,0.1)}
+.traffic_readme .contents_text .text .text_img img{text-align: center;margin: 0 auto;}
+.traffic_readme .contents_text .text .text_img p{text-align: left;line-height: 70px;margin-left: 35px;}
+.traffic_readme .contents_text .text .text_doc {float:left;margin-left: 100px;}
+.traffic_readme .contents_text .text .text_doc p{line-height: 70px; float:left;}
+.traffic_readme .contents_text .text .text_doc img{ float:left; margin-top: 20px;}
+.traffic_readme .contents_text .text_help{ padding-top: 60px;}
+.traffic_readme .contents_help{height: 900px;}
+
+.footer{ width:100%; height:30px; padding:120px 0; clear:both;}
+.footer .word span{ text-align:center; line-height:30px; color:#333; font-size:14px;}
