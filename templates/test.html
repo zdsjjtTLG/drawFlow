@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <script type="text/javascript" src="js/traffic/interSectionFlow.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/traffic.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="js/traffic/echarts.js"></script>
+    <script type="text/javascript" src="js/traffic/CrossroadsEcharts.js"></script>
+    <script type="text/javascript" src="js/traffic/SectionEcharts.js"></script>
+</head>
+<body>
+  <div id="traffic_demo" class="traffic_demo">
+            <div class="traffic_demo_nav">
+                <div data-url="turn_flow" class="demo_nav">
+                    <a href="javascript:void(0);">
+                        <img id="turn" src="images/traffic/icon/turn_flow.png">
+                    </a>
+                </div>
+                <div class="demo_nav active" data-url="crossing_flow">
+                    <a href="javascript:void(0);">
+                        <img id="crossing" src="images/traffic/icon/crossing_flow_active.png">
+                    </a>
+                </div>
+                <div class="demo_nav" data-url="section_flow">
+                    <a href="javascript:void(0);">
+                        <img id="section" src="images/traffic/icon/section_flow.png">
+                    </a>
+                </div>
+            </div>
+            <div class="traffic_demo_right">
+                <div class="turn_flow hide">
+                    <div class="traffic_demo_flow turn_flow_echarts">
+                        <div id="turn_flow_echarts" _echarts_instance_="ec_1686446069161" style="width: 700px; height: 700px; -webkit-tap-highlight-color: transparent; user-select: none;"><div style="position: relative; overflow: hidden; width: 700px; height: 700px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="700" height="700" style="position: absolute; left: 0px; top: 0px; width: 700px; height: 700px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div></div>
+                    </div>
+                    <div class="traffic_demo_form turn_flow_form" id="turn_flow_formsub" name="turn_flow_flow">
+                        <div class="con_title" align="center"><span>参数设置</span></div>
+                        <div>
+                            <p class="dire_title" align="left">
+                            </p>
+                            <p class="cro_name">交叉口名称 : </p>
+
+                            <p></p>
+                            <div class="form_road"><input class="xxroad" id="turn_flow_xxroad" name="turn_flow_xxroad" type="text" value="纵向道路" placeholder="纵向" onblur="turn_flow()" onfocus="this.select()">&nbsp;&nbsp;~&nbsp;
+                                <input class="yyroad" id="turn_flow_yyroad" name="turn_flow_yyroad" type="text" value="横向道路" placeholder="横向" onblur="turn_flow()" onfocus="this.select()">
+                            </div>
+                            <p class="dire_con" align="left">进道口转向流量 :</p>
+                            <p class="east" align="left">方向 : 东</p>
+                            <div class="left"><img src="images/traffic/left.png" style="margin-top: 1px;"></div>
+                            <input class="east_left" id="turn_flow_east_left" type="number" value="100" onblur="turn_flow()">
+                            <div class="right"><img src="images/traffic/right.png" style="margin-top: 1px;"></div>
+                            <input class="east_right" id="turn_flow_east_right" type="number" value="100" onblur="turn_flow()"><br><br>
+                            <div class="front"><img src="images/traffic/zhi.png" style="margin-top: 1px;"></div>
+                            <input class="east_front" id="turn_flow_east_front" type="number" value="100" onblur="turn_flow()">
+                            <div class="return"><img src="images/traffic/diao.png" style="margin-top: 2px;"></div>
+                            <input class="east_return" id="turn_flow_east_return" type="number" value="0" onblur="turn_flow()">
+
+                            <p class="north" align="left">方向 : 北</p>
+                            <div class="left"><img src="images/traffic/left.png" style="margin-top: 1px;"></div>
+                            <input class="north_left" id="turn_flow_north_left" type="number" value="100" onblur="turn_flow()">
+                            <div class="right"><img src="images/traffic/right.png" style="margin-top: 1px;"></div>
+                            <input class="north_right" id="turn_flow_north_right" type="number" value="100" onblur="turn_flow()"> <br><br>
+                            <div class="front"><img src="images/traffic/zhi.png" style="margin-top: 1px;"></div>
+                            <input class="north_front" id="turn_flow_north_front" type="number" value="100" onblur="turn_flow()">
+                            <div class="return"><img src="images/traffic/diao.png" style="margin-top: 2px;"></div>
+                            <input class="north_return" id="turn_flow_north_return" type="number" value="0" onblur="turn_flow()">
+
+                            <p class="west" align="left">方向 : 西</p>
+                            <div class="left"><img src="images/traffic/left.png" style="margin-top: 1px;"></div>
+                            <input class="west_left" id="turn_flow_west_left" type="number" value="100" onblur="turn_flow()">
+                            <div class="right"><img src="images/traffic/right.png" style="margin-top: 1px;"></div>
+                            <input class="west_right" id="turn_flow_west_right" type="number" value="100" onblur="turn_flow()"> <br><br>
+                            <div class="front"><img src="images/traffic/zhi.png" style="margin-top: 1px;"></div>
+                            <input class="west_front" id="turn_flow_west_front" type="number" value="100" onblur="turn_flow()">
+                            <div class="return"><img src="images/traffic/diao.png" style="margin-top: 2px;"></div>
+                            <input class="west_return" id="turn_flow_west_return" type="number" value="0" onblur="turn_flow()">
+
+                            <p class="south" align="left">方向 : 南</p>
+                            <div class="left"><img src="images/traffic/left.png" style="margin-top: 1px;"></div>
+                            <input class="south_left" id="turn_flow_south_left" type="number" value="100" onblur="turn_flow()">
+                            <div class="right"><img src="images/traffic/right.png" style="margin-top: 1px;"></div>
+                            <input class="south_right" id="turn_flow_south_right" type="number" value="100" onblur="turn_flow()"> <br><br>
+                            <div class="front"><img src="images/traffic/zhi.png" style="margin-top: 1px;"></div>
+                            <input class="south_front" id="turn_flow_south_front" type="number" value="100" onblur="turn_flow()">
+                            <div class="return"><img src="images/traffic/diao.png" style="margin-top: 2px;"></div>
+                            <input class="south_return" id="turn_flow_south_return" type="number" value="0" onblur="turn_flow()"> <br>
+                            <!--<div align="center"><input class="sub" type="button" value="提交" onClick="turn_flow()"></div>-->
+                            <p class="radio" align="left">尺寸 :<br>
+                                <input name="turn_flow_divSize" type="radio" value="700" checked="checked" onclick="turn_flow()">700
+                                <input name="turn_flow_divSize" type="radio" value="600" onclick="turn_flow()">600
+                                <input name="turn_flow_divSize" type="radio" value="500" onclick="turn_flow()">500
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="crossing_flow">
+                    <div class="traffic_demo_flow crossing_flow_echarts ">
+                        <div id="crossing_flow_echarts" _echarts_instance_="ec_1686446069162" style="width: 700px; height: 700px; -webkit-tap-highlight-color: transparent; user-select: none;"><div style="position: relative; overflow: hidden; width: 700px; height: 700px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas data-zr-dom-id="zr_0" width="700" height="700" style="position: absolute; left: 0px; top: 0px; width: 700px; height: 700px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div></div>
+
+                    </div>
+                    <div class="traffic_demo_form crossing_flow_form" id="crossing_flow_formsub" name="crossing_flow_flow">
+                        <div class="con_title" align="center"><span>参数设置</span></div>
+                        <div>
+                            <p class="dire_title" align="left">
+                            </p>
+                            <p class="cro_name">交叉口名称 : </p>
+
+                            <p></p>
+                            <div class="form_road">
+                                <input class="xxroad" id="crossing_flow_xxroad" name="crossing_flow_xxroad" type="text" value="纵向道路" placeholder="纵向" onblur="crossing_flow()" onfocus="this.select()">&nbsp;&nbsp;~&nbsp;
+                                <input class="yyroad" id="crossing_flow_yyroad" name="crossing_flow_yyroad" type="text" value="横向道路" placeholder="横向" onblur="crossing_flow()" onfocus="this.select()">
+                            </div>
+                            <p class="dire_con" align="left">进道口转向流量 :</p>
+                            <p class="east" align="left">方向 : 东</p>
+                            <div class="left"><img src="images/traffic/left.png" style="margin-top: 1px;"></div>
+                            <input class="east_left" id="crossing_flow_east_left" type="number" value="100" onblur="crossing_flow()">
+                            <div class="right"><img src="images/traffic/right.png" style="margin-top: 1px;"></div>
+                            <input class="east_right" id="crossing_flow_east_right" type="number" value="100" onblur="crossing_flow()"><br><br>
+                            <div class="front"><img src="images/traffic/zhi.png" style="margin-top: 1px;"></div>
+                            <input class="east_front" id="crossing_flow_east_front" type="number" value="100" onblur="crossing_flow()">
+                            <div class="return"><img src="images/traffic/diao.png" style="margin-top: 2px;"></div>
+                            <input class="east_return" id="crossing_flow_east_return" type="number" value="0" onblur="crossing_flow()">
+
+                            <p class="north" align="left">方向 : 北</p>
+                            <div class="left"><img src="images/traffic/left.png" style="margin-top: 1px;"></div>
+                            <input class="north_left" id="crossing_flow_north_left" type="number" value="100" onblur="crossing_flow()">
+                            <div class="right"><img src="images/traffic/right.png" style="margin-top: 1px;"></div>
+                            <input class="north_right" id="crossing_flow_north_right" type="number" value="100" onblur="crossing_flow()"> <br><br>
+                            <div class="front"><img src="images/traffic/zhi.png" style="margin-top: 1px;"></div>
+                            <input class="north_front" id="crossing_flow_north_front" type="number" value="100" onblur="crossing_flow()">
+                            <div class="return"><img src="images/traffic/diao.png" style="margin-top: 2px;"></div>
+                            <input class="north_return" id="crossing_flow_north_return" type="number" value="0" onblur="crossing_flow()">
+
+                            <p class="west" align="left">方向 : 西</p>
+                            <div class="left"><img src="images/traffic/left.png" style="margin-top: 1px;"></div>
+                            <input class="west_left" id="crossing_flow_west_left" type="number" value="100" onblur="crossing_flow()">
+                            <div class="right"><img src="images/traffic/right.png" style="margin-top: 1px;"></div>
+                            <input class="west_right" id="crossing_flow_west_right" type="number" value="100" onblur="crossing_flow()"> <br><br>
+                            <div class="front"><img src="images/traffic/zhi.png" style="margin-top: 1px;"></div>
+                            <input class="west_front" id="crossing_flow_west_front" type="number" value="100" onblur="crossing_flow()">
+                            <div class="return"><img src="images/traffic/diao.png" style="margin-top: 2px;"></div>
+                            <input class="west_return" id="crossing_flow_west_return" type="number" value="0" onblur="crossing_flow()">
+
+                            <p class="south" align="left">方向 : 南</p>
+                            <div class="left"><img src="images/traffic/left.png" style="margin-top: 1px;"></div>
+                            <input class="south_left" id="crossing_flow_south_left" type="number" value="100" onblur="crossing_flow()">
+                            <div class="right"><img src="images/traffic/right.png" style="margin-top: 1px;"></div>
+                            <input class="south_right" id="crossing_flow_south_right" type="number" value="100" onblur="crossing_flow()"> <br><br>
+                            <div class="front"><img src="images/traffic/zhi.png" style="margin-top: 1px;"></div>
+                            <input class="south_front" id="crossing_flow_south_front" type="number" value="100" onblur="crossing_flow()">
+                            <div class="return"><img src="images/traffic/diao.png" style="margin-top: 2px;"></div>
+                            <input class="south_return" id="crossing_flow_south_return" type="number" value="0" onblur="crossing_flow()"> <br>
+                            <!--<div align="center"><input class="sub" type="button" value="提交" onClick="show()"></div>-->
+                            <p class="radio" align="left">尺寸 :<br>
+                                <input name="crossing_flow_divSize" type="radio" value="700" checked="checked" onclick="crossing_flow()">700
+                                <input name="crossing_flow_divSize" type="radio" value="600" onclick="crossing_flow()">600
+                                <input name="crossing_flow_divSize" type="radio" value="500" onclick="crossing_flow()">500
+                            </p>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="section_flow hide">
+                    <div class="traffic_demo_flow section_flow_echarts">
+                        <div id="section_flow_echarts" _echarts_instance_="ec_1686446069163" style="width: 700px; height: 700px; -webkit-tap-highlight-color: transparent; user-select: none;"><div style="position: relative; overflow: hidden; width: 700px; height: 700px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="700" height="700" style="position: absolute; left: 0px; top: 0px; width: 700px; height: 700px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div></div>
+
+                    </div>
+                    <div class="traffic_demo_form section_flow_form" id="section_flow_formsub" name="section_flow_flow">
+                        <div class="con_title" align="center"><span>参数设置</span></div>
+                        <div>
+                            <br><br>
+                            <p class="dire_title" align="left">
+                            </p>
+                            <p class="cro_name">交叉口名称 : </p>
+                            <p></p><br>
+                            <div class="form_road"><input class="xxroad" id="section_flow_xxroad" name="section_flow_xxroad" type="text" value="纵向道路" placeholder="纵向" onblur="section_flow()" onfocus="this.select()">&nbsp;&nbsp;~&nbsp;
+                                <input class="yyroad" id="section_flow_yyroad" name="section_flow_yyroad" type="text" value="横向道路" placeholder="横向" onblur="section_flow()" onfocus="this.select()"></div>
+                            <p class="dire_con" align="left">进道口断面流量 :</p><br>
+                            <p class="east" align="left">方向 :
+                                <select id="section_flow_dire" class="dire" onclick="section_flow()">
+                                    <option value="东">东</option>
+                                    <option value="北">北</option>
+                                    <option value="西">西</option>
+                                    <option value="南">南</option>
+                                </select>
+                            </p>
+                            <div class="sec_left"><img id="section_flow_img1" src="images/traffic/zhi.png" style="margin-top: 1px;"></div>
+                            <input class="sec_east_left" id="sec_east_left" type="number" value="100" onblur="section_flow()">
+                            <div class="sec_right"><img id="section_flow_img2" src="images/traffic/east.png" style="margin-top: 1px;"></div>
+                            <input class="sec_east_right" id="sec_east_right" type="number" value="100" onblur="section_flow()"><br><br>
+                            <!--<div align="center"><input class="sub" type="button" value="提交" onClick="show()"></div>-->
+                            <p class="radio" align="left">尺寸 :<br>
+                                <input name="section_flow_divSize" type="radio" value="700" checked="checked" onclick="section_flow()">700
+                                <input name="section_flow_divSize" type="radio" value="600" onclick="section_flow()">600
+                                <input name="section_flow_divSize" type="radio" value="500" onclick="section_flow()">500
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+  <script>
+
+    function changeTab(click_elements, element, index_prefix) {
+        var index = element.data("url");
+        click_elements.removeClass("active");
+        element.addClass("active");
+        $(index_prefix + index).removeClass("hide").siblings().addClass("hide");
+        if (index == "demo") {
+            turn_flow();
+        }
+        return false;
+    }
+
+    /**转向*/
+    function turn_flow() {
+        var turn_flow_xxroad = document.getElementById('turn_flow_xxroad').value;
+        var turn_flow_yyroad = document.getElementById('turn_flow_yyroad').value;
+        var turn_flow_east_left = Math.round(document.getElementById('turn_flow_east_left').value);
+        var turn_flow_east_right = Math.round(document.getElementById('turn_flow_east_right').value);
+        var turn_flow_east_front = Math.round(document.getElementById('turn_flow_east_front').value);
+        var turn_flow_east_return = Number(document.getElementById('turn_flow_east_return').value);
+        var turn_flow_north_left = Math.round(document.getElementById('turn_flow_north_left').value);
+        var turn_flow_north_right = Math.round(document.getElementById('turn_flow_north_right').value);
+        var turn_flow_north_front = Math.round(document.getElementById('turn_flow_north_front').value);
+        var turn_flow_north_return = Math.round(document.getElementById('turn_flow_north_return').value);
+        var turn_flow_west_left = Math.round(document.getElementById('turn_flow_west_left').value);
+        var turn_flow_west_right = Math.round(document.getElementById('turn_flow_west_right').value);
+        var turn_flow_west_front = Math.round(document.getElementById('turn_flow_west_front').value);
+        var turn_flow_west_return = Math.round(document.getElementById('turn_flow_west_return').value);
+        var turn_flow_south_left = Math.round(document.getElementById('turn_flow_south_left').value);
+        var turn_flow_south_right = Math.round(document.getElementById('turn_flow_south_right').value);
+        var turn_flow_south_front = Math.round(document.getElementById('turn_flow_south_front').value);
+        var turn_flow_south_return = Math.round(document.getElementById('turn_flow_south_return').value);
+        var turn_flow_size = $('input[name="turn_flow_divSize"]:checked').val();
+        var turn_flow_roadType = {"YY_ROAD": turn_flow_yyroad, "XX_ROAD": turn_flow_xxroad};
+        var turn_flow_crosData = {
+            "s": {
+                "left": {"COUNT": turn_flow_south_left},
+                "right": {"COUNT": turn_flow_south_right},
+                "front": {"COUNT": turn_flow_south_front},
+                "return": {"COUNT": turn_flow_south_return}
+            },
+            "e": {
+                "left": {"COUNT": turn_flow_east_left},
+                "right": {"COUNT": turn_flow_east_right},
+                "front": {"COUNT": turn_flow_east_front},
+                "return": {"COUNT": turn_flow_east_return}
+            },
+            "w": {
+                "left": {"COUNT": turn_flow_west_left},
+                "right": {"COUNT": turn_flow_west_right},
+                "front": {"COUNT": turn_flow_west_front},
+                "return": {"COUNT": turn_flow_west_return}
+            },
+            "n": {
+                "left": {"COUNT": turn_flow_north_left},
+                "right": {"COUNT": turn_flow_north_right},
+                "front": {"COUNT": turn_flow_north_front},
+                "return": {"COUNT": turn_flow_north_return}
+            }
+        };
+        interSectionFlow.crosBaseFlow({            //*必须填写的！
+            id: "turn_flow_echarts",//echarts的容器id ==>*
+            data: {
+                data: turn_flow_crosData,
+                roadNameType: turn_flow_roadType
+            },                    //数据  {COUNT: 12199,SECTION_DIRE: 1,SECTION_DIRECTION: "东",XX_ROAD:'纵向道路',YY_ROAD:'横向道路' }这5列必须有且列名一致！   ==>* //配置信息对象,
+            divSize: turn_flow_size,
+        });
+    }
+
+    /**路段*/
+    function crossing_flow() {
+        var crossing_flow_xxroad = document.getElementById('crossing_flow_xxroad').value;
+        var crossing_flow_yyroad = document.getElementById('crossing_flow_yyroad').value;
+        var crossing_flow_east_left = Math.round(document.getElementById('crossing_flow_east_left').value);
+        var crossing_flow_east_right = Math.round(document.getElementById('crossing_flow_east_right').value);
+        var crossing_flow_east_front = Math.round(document.getElementById('crossing_flow_east_front').value);
+        var crossing_flow_east_return = Number(document.getElementById('crossing_flow_east_return').value);
+        var crossing_flow_north_left = Math.round(document.getElementById('crossing_flow_north_left').value);
+        var crossing_flow_north_right = Math.round(document.getElementById('crossing_flow_north_right').value);
+        var crossing_flow_north_front = Math.round(document.getElementById('crossing_flow_north_front').value);
+        var crossing_flow_north_return = Math.round(document.getElementById('crossing_flow_north_return').value);
+        var crossing_flow_west_left = Math.round(document.getElementById('crossing_flow_west_left').value);
+        var crossing_flow_west_right = Math.round(document.getElementById('crossing_flow_west_right').value);
+        var crossing_flow_west_front = Math.round(document.getElementById('crossing_flow_west_front').value);
+        var crossing_flow_west_return = Math.round(document.getElementById('crossing_flow_west_return').value);
+        var crossing_flow_south_left = Math.round(document.getElementById('crossing_flow_south_left').value);
+        var crossing_flow_south_right = Math.round(document.getElementById('crossing_flow_south_right').value);
+        var crossing_flow_south_front = Math.round(document.getElementById('crossing_flow_south_front').value);
+        var crossing_flow_south_return = Math.round(document.getElementById('crossing_flow_south_return').value);
+        var crossing_flow_size = $('input[name="crossing_flow_divSize"]:checked').val();
+        var crossing_flow_roadType = {"YY_ROAD": crossing_flow_yyroad, "XX_ROAD": crossing_flow_xxroad};
+        var crossing_flow_crosData = {
+            "s": {
+                "left": {"COUNT": crossing_flow_south_left},
+                "right": {"COUNT": crossing_flow_south_right},
+                "front": {"COUNT": crossing_flow_south_front},
+                "return": {"COUNT": crossing_flow_south_return}
+            },
+            "e": {
+                "left": {"COUNT": crossing_flow_east_left},
+                "right": {"COUNT": crossing_flow_east_right},
+                "front": {"COUNT": crossing_flow_east_front},
+                "return": {"COUNT": crossing_flow_east_return}
+            },
+            "w": {
+                "left": {"COUNT": crossing_flow_west_left},
+                "right": {"COUNT": crossing_flow_west_right},
+                "front": {"COUNT": crossing_flow_west_front},
+                "return": {"COUNT": crossing_flow_west_return}
+            },
+            "n": {
+                "left": {"COUNT": crossing_flow_north_left},
+                "right": {"COUNT": crossing_flow_north_right},
+                "front": {"COUNT": crossing_flow_north_front},
+                "return": {"COUNT": crossing_flow_north_return}
+            }
+        };
+        interSectionFlow.crosBaseFlow({            //*必须填写的！
+            id: "crossing_flow_echarts",//echarts的容器id ==>*
+            data: {
+                data: crossing_flow_crosData,
+                roadNameType: crossing_flow_roadType
+            },                    //数据  {COUNT: 12199,SECTION_DIRE: 1,SECTION_DIRECTION: "东",XX_ROAD:'纵向道路',YY_ROAD:'横向道路' }这5列必须有且列名一致！   ==>* //配置信息对象,
+            divSize: crossing_flow_size,
+            confObj: {typeStr: 'COUNT'}
+        });
+    }
+
+    /**断面*/
+    function section_flow() {
+        var section_flow_xxroad = document.getElementById('section_flow_xxroad').value;
+        var section_flow_yyroad = document.getElementById('section_flow_yyroad').value;
+        var section_flow_dire = document.getElementById('section_flow_dire').value;
+        var section_flow_size = $('input[name="section_flow_divSize"]:checked').val();
+        if (section_flow_dire == '东' || section_flow_dire == '西') {
+            document.getElementById('section_flow_img1').src = "images/traffic/zhi.png";
+            document.getElementById('section_flow_img2').src = "images/traffic/east.png";
+            section_dire1 = "ew";
+            section_dire2 = "we";
+            var count1 = Math.round(document.getElementById('sec_east_left').value);
+            var count2 = Math.round(document.getElementById('sec_east_right').value);
+        } else {
+            document.getElementById('section_flow_img1').src = "images/traffic/south.png";
+            document.getElementById('section_flow_img2').src = "images/traffic/north.png";
+            section_dire1 = "ns";
+            section_dire2 = "sn";
+            var count1 = Math.round(document.getElementById('sec_east_left').value);
+            var count2 = Math.round(document.getElementById('sec_east_right').value);
+        }
+        var section_flow_data = [{
+            COUNT: count1,
+            SECTION_DIRE: section_dire1,
+            SECTION_DIRECTION: section_flow_dire,
+            XX_ROAD: section_flow_yyroad,
+            YY_ROAD: section_flow_xxroad
+        }, {
+            COUNT: count2,
+            SECTION_DIRE: section_dire2,       //SECTION_DIRE属性变成数字,ew:东-西 ,we:西-东,sn:南-北,ns:北-南  //字符串数字和数字比较：'1'==1等于true 非数字字符串和数字比较都为false!
+            SECTION_DIRECTION: section_flow_dire,
+            XX_ROAD: section_flow_xxroad,
+            YY_ROAD: section_flow_yyroad
+        }];
+        interSectionFlow.secBaseFlow({            //*必须填写的！
+            id: "section_flow_echarts",//echarts的容器id ==>*
+            data: section_flow_data,                    //数据  {COUNT: 12199,SECTION_DIRE: 1,SECTION_DIRECTION: "东",XX_ROAD:'纵向道路',YY_ROAD:'横向道路' }这5列必须有且列名一致！   ==>*                               //配置信息对象,
+            divSize: section_flow_size
+        });
+    }
+
+    $(document).ready(function () {
+        importJS("js/traffic/echarts.js");
+        importJS("js/traffic/CrossroadsEcharts.js");
+        importJS("js/traffic/SectionEcharts.js");
+
+
+        $("ul.traffic_nav_ul li").click(
+            function () {
+                var click_elements = $("ul.traffic_nav_ul li");
+                var element = $(this);
+                var index_prefix = "#traffic_";
+                changeTab(click_elements, element, index_prefix);
+                return false;
+            });
+
+        $("div.demo_nav").click(
+            function () {
+                var click_elements = $("div.demo_nav");
+                var element = $(this);
+                var index_prefix = ".";
+                changeTab(click_elements, element, index_prefix);
+                /**执行对应方法*/
+                eval(element.data("url") + "();");
+                /**更换图片*/
+                var img = element.find("img");
+                var activeSrc = "images/traffic/icon/" + element.data("url") + "_active.png";
+                img.attr("src", activeSrc);
+                $.each(element.siblings(), function (index, value) {
+                    var imgStr = "images/traffic/icon/" + $(value).data("url") + ".png";
+                    $(value).find("img").attr("src", imgStr);
+                });
+                return false;
+            });
+
+        $("ul.contents_ul li").click(
+            function () {
+                var click_elements = $("ul.contents_ul li");
+                var element = $(this);
+                var index_prefix = ".";
+                changeTab(click_elements, element, index_prefix);
+                return false;
+            });
+        //turn_flow();
+    });
+    </script>
+
+</body>
+</html>
