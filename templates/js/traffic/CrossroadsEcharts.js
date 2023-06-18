@@ -3,10 +3,21 @@ var crossroadsBaseEcharts = {
     roadNameType: {},
     data: {columnName: "COUNT", e: {}, w: {}, s: {}, n: {}},
     setData: function (o, e, t, r) {
-        setcrossroadsBaseEchartsDirection(o.data), crossroadsBaseEcharts.data.columnName = e, crostionBaseRule.maxWidth = null != t.linksSize ? t.linksSize : r.linksSize, crostionBaseRule.arrayFont = null != t.arrayFont ? t.arrayFont : r.arrayFont, crostionBaseRule.bili = null != o.divSize ? 950 / o.divSize : 1, crostionBaseRule.typeStr = null != t.typeStr ? t.typeStr : r.typeStr, t.title = null != t.title ? t.title : {}, crostionBaseRule.title.name = null != t.title.name ? t.title.name : r.title.name, crostionBaseRule.title.size = null != t.title.size ? t.title.size : r.title.size, crostionBaseRule.title.left = null != t.title.left ? t.title.left : r.title.left, crostionBaseRule.title.top = null != t.title.top ? t.title.top : r.title.top
+        setcrossroadsBaseEchartsDirection(o.data),
+            crossroadsBaseEcharts.data.columnName = e,
+            crostionBaseRule.maxWidth = null != t.linksSize ? t.linksSize : r.linksSize,
+            crostionBaseRule.arrayFont = null != t.arrayFont ? t.arrayFont : r.arrayFont,
+            crostionBaseRule.bili = null != o.divSize ? 950 / o.divSize : 1,
+            crostionBaseRule.typeStr = null != t.typeStr ? t.typeStr : r.typeStr,
+            t.title = null != t.title ? t.title : {},
+            crostionBaseRule.title.name = null != t.title.name ? t.title.name : r.title.name,
+            crostionBaseRule.title.size = null != t.title.size ? t.title.size : r.title.size,
+            crostionBaseRule.title.left = null != t.title.left ? t.title.left : r.title.left,
+            crostionBaseRule.title.top = null != t.title.top ? t.title.top : r.title.top
     },
     getOption: getCrossroadsOption
-}, crostionBaseRule = {
+},
+    crostionBaseRule = {
     base: 4e3,
     maxWidth: 15,
     bili: 1,

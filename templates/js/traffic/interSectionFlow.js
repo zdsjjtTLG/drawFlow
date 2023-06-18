@@ -1,8 +1,11 @@
 function importJS(e) {
     var t = e.toString();
     document.getElementsByTagName("script");
-    newElement = document.createElement("script"), newElement.type = "text/javascript", newElement.src = t, document.getElementsByTagName("head")[0].appendChild(newElement)
-};var interSectionFlow = {
+    newElement = document.createElement("script"),
+        newElement.type = "text/javascript",
+        newElement.src = t, document.getElementsByTagName("head")[0].appendChild(newElement)
+};
+var interSectionFlow = {
     name: "调用断面交叉口echarts对象！",
     confObj: {},
     secBaseFlow: secBaseFlowEcharts,
@@ -40,6 +43,7 @@ function secBaseFlowEcharts(e) {
     }
 }
 
+
 function crosBaseFlowEcharts(e) {
     if (!defaultConf(e.divSize)) {
         null == e.confObj && (e.confObj = {});
@@ -49,6 +53,7 @@ function crosBaseFlowEcharts(e) {
             height: null == e.divSize ? 500 : e.divSize + "px"
         });
         var n, i = echarts.init(t);
-        crossroadsBaseEcharts.setData(e, "COUNT", e.confObj, interSectionFlow.confObj), (n = crossroadsBaseEcharts.getOption()) && "object" == typeof n && (i.setOption(n, !0), i.resize())
+        crossroadsBaseEcharts.setData(e, "COUNT", e.confObj, interSectionFlow.confObj),
+        (n = crossroadsBaseEcharts.getOption()) && "object" == typeof n && (i.setOption(n, !0), i.resize())
     }
 }
